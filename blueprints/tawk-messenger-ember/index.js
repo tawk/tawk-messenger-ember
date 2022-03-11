@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	description: 'tawk-messenger-ember installation blueprint',
+	description : 'tawk-messenger-ember installation blueprint',
 
 	// locals(options) {
 	//   // Return custom template variables here.

@@ -14,10 +14,10 @@ module('Unit | Instance Initializer | widget', function (hooks) {
 			Resolver = Resolver;
 		};
 		this.TestApplication.instanceInitializer({
-			name: 'initializer under test',
+			name : 'initializer under test',
 			initialize,
 		});
-		this.application = this.TestApplication.create({ autoboot: false });
+		this.application = this.TestApplication.create({ autoboot : false });
 		this.instance = this.application.buildInstance();
 	});
 	hooks.afterEach(function () {
