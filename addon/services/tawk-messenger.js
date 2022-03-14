@@ -1,10 +1,13 @@
 import Service from '@ember/service';
 
 export default class TawkMessenger extends Service {
-	constructor() {
-		super();
+	constructor(...args) {
+		super(...args);
 
-		console.log('TawkMessenger service has been called');
+		if (!window.Tawk_API || typeof window.Tawk_API !== 'object') {
+			console.error('[Tawk-messenger-ember warn]: Please load the component first before calling the services.');
+			return;
+		}
 	}
 
 	/**
