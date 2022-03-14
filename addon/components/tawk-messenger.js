@@ -1,12 +1,72 @@
+import { getOwner } from '@ember/application';
 import Component from '@glimmer/component';
+
+// Utilities
+import { isValidString } from '../utils/helper';
+import { loadScript } from '../utils/widget';
 
 export default class TawkMessengerComponent extends Component {
 	constructor(...args) {
 		super(...args);
 
+		this.env = getOwner(this).resolveRegistration('config:environment');
+
+		if (!this.env.tawkMessenger && typeof this.env.tawkMessenger !== 'object') {
+			console.error('[Tawk-messenger-ember error]: \'tawkMessenger\' object is missing in config/environment');
+			return;
+		}
+
+		if (!isValidString(this.env.tawkMessenger.propertyId)) {
+			console.error('[Tawk-messenger-ember warn]: You didn\'t specified \'propertyId\'');
+			return;
+		}
+
+		if (!isValidString(this.env.tawkMessenger.widgetId)) {
+			console.error('[Tawk-messenger-ember warn]: You didn\'t specified \'widgetId\'');
+			return;
+		}
+
+		this.load(this.env.tawkMessenger);
+	}
+
+	load(options) {
+		if (!window || !document) {
+			return;
+		}
+
+		/**
+		 * Set placeholder
+		 */
+		window.Tawk_API = window.Tawk_API || {};
+		window.Tawk_LoadStart = new Date();
+
+		/**
+		 * Set custom style
+		 */
+		if (options.customStyle && typeof options.customStyle === 'object') {
+			window.Tawk_API.customStyle = options.customStyle;
+		}
+
+		/**
+		 * Inject the Tawk script
+		 */
+		loadScript({
+			propertyId : options.propertyId,
+			widgetId : options.widgetId,
+			embedId : options.embedId,
+			basePath : options.basePath,
+		});
+
+		/**
+		 * Inject the event listeners
+		*/
 		this.mapListeners();
 	}
 
+	/**
+	 * API for listening an event emitting
+	 * inside of the widget
+	 */
 	mapListeners() {
 		window.addEventListener('tawkLoad', () => {
 			if (this.args.onLoad) {
@@ -15,8 +75,8 @@ export default class TawkMessengerComponent extends Component {
 		});
 
 		window.addEventListener('tawkStatusChange', (status) => {
-			if (this.args.statusChange) {
-				this.args.onstatusChange(status.detail);
+			if (this.args.onStatusChange) {
+				this.args.onStatusChange(status.detail);
 			}
 		});
 
