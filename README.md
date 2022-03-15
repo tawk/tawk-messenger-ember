@@ -48,8 +48,7 @@ module.exports = function (environment) {
 ## Documentation
 
 This project includes a `docs` folder with more details on the following:
-1.  [SPA setup](docs/spa-setup.md)
-1.  [SSR setup](docs/ssr-setup.md)
+1.  [How to Use](docs/how-to-use.md)
 1.  [API Reference](docs/api-reference.md)
 
 <br/>
