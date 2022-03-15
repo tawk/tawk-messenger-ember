@@ -4,7 +4,7 @@
   "description": "Official Ember plugin for Tawk messenger",
   "keywords": [
     "ember-addon",
-	"emberjs",
+    "emberjs",
     "ember",
     "ember-plugin",
     "tawk",
