@@ -57,7 +57,7 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
 <br/>
 
 ## onLoad
-Listen on event that invoked right after the widget is rendered. This is not supported in pop out chat window.
+Callback function invoked right after the widget is rendered. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -76,7 +76,7 @@ handleOnLoad() {
 <br/>
 
 ## onStatusChange
-Listen on event that invoked when the page status changes. The function will receive the changed status which will be either online, away or offline. This is not supported in pop out chat window.
+Callback function invoked when the page status changes. The function will receive the changed status which will be either online, away or offline. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -95,7 +95,7 @@ handleOnStatusChange(status) {
 <br/>
 
 ## onBeforeLoad
-Listen on event that invoked right when Tawk_API is ready to be used and before the widget is rendered. This is not supported in pop out chat window.
+Callback function invoked right when Tawk_API is ready to be used and before the widget is rendered. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -114,7 +114,7 @@ handleOnBeforeLoad() {
 <br/>
 
 ## onChatMaximized
-Listen on event that invoked when the widget is maximized. This is not supported in pop out chat window.
+Callback function invoked when the widget is maximized. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -133,7 +133,7 @@ handleOnChatMaximized() {
 <br/>
 
 ## onChatMinimized
-Listen on event that invoked when the widget is minimized. This is not supported in pop out chat window.
+Callback function invoked when the widget is minimized. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -152,7 +152,7 @@ handleOnChatMaximized() {
 <br/>
 
 ## onChatHidden
-Listen on event that invoked when the widget is hidden. This is not supported in pop out chat window.
+Callback function invoked when the widget is hidden. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -171,7 +171,7 @@ handleOnChatHidden() {
 <br/>
 
 ## onChatStarted
-Listen on event that invoked when the widget is started.
+Callback function invoked when the widget is started.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -190,7 +190,7 @@ handleOnChatStarted() {
 <br/>
 
 ## onChatEnded
-Listen on event that invoked when the widget is ended. This is not supported in pop out chat window.
+Callback function invoked when the widget is ended. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -209,7 +209,7 @@ handleOnChatEnded() {
 <br/>
 
 ## onPrechatSubmit
-Listen on event that invoked when the Pre-Chat Form is submitted. The submitted form data is passed to the function. This is not supported in pop out chat window.
+Callback function invoked when the Pre-Chat Form is submitted. The submitted form data is passed to the function. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -228,7 +228,7 @@ handleOnPrechatSubmit(data) {
 <br/>
 
 ## onOfflineSubmit
-Listen on event that invoked when the Offline form is submitted. The submitted form data is passed to the function. Form data will contain {name : ”, email : ”, message : ”, questions : []}. This is not supported in pop out chat window.
+Callback function invoked when the Offline form is submitted. The submitted form data is passed to the function. Form data will contain {name : ”, email : ”, message : ”, questions : []}. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -247,7 +247,7 @@ handleOnOfflineSubmit(data) {
 <br/>
 
 ## onChatMessageVisitor
-Listen on event that invoked when message is sent by the visitor. The message is passed to the function. This is not supported in pop out chat window.
+Callback function invoked when message is sent by the visitor. The message is passed to the function. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -266,7 +266,7 @@ handleOnChatMessageVisitor(message) {
 <br/>
 
 ## onChatMessageAgent
-Listen on event that invoked when message is sent by the agent. The message is passed to the function. This is not supported in pop out chat window.
+Callback function invoked when message is sent by the agent. The message is passed to the function. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -285,7 +285,7 @@ handleOnChatMessageAgent(message) {
 <br/>
 
 ## onChatMessageSystem
-Listen on event that invoked when message is sent by the system. The message is passed to the function. This is not supported in pop out chat window.
+Callback function invoked when message is sent by the system. The message is passed to the function. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -304,7 +304,7 @@ handleOnChatMessageSystem(message) {
 <br/>
 
 ## onAgentJoinChat
-Listen on event that invoked when an agent joins the chat. The data is passed to the function. Will contain {name : ”, position : ”, image : ”, id : ”}. This is not supported in pop out chat window.
+Callback function invoked when an agent joins the chat. The data is passed to the function. Will contain {name : ”, position : ”, image : ”, id : ”}. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -323,7 +323,7 @@ handleOnAgentJoinChat(data) {
 <br/>
 
 ## onAgentLeaveChat
-Listen on event that invoked when an agent leaves the chat. The data is passed to the function. Will contain {name : ”, id : ”}. This is not supported in pop out chat window.
+Callback function invoked when an agent leaves the chat. The data is passed to the function. Will contain {name : ”, id : ”}. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -342,7 +342,7 @@ handleOnAgentLeaveChat(data) {
 <br/>
 
 ## onChatSatisfaction
-Listen on event that invoked when an agent leaves the chat. The satisfaction is passed to the function. -1 = dislike | 0 = neutral | 1 = like. This is not supported in pop out chat window.
+Callback function invoked when an agent leaves the chat. The satisfaction is passed to the function. -1 = dislike | 0 = neutral | 1 = like. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -361,7 +361,7 @@ handleOnChatSatisfaction(satisfaction) {
 <br/>
 
 ## onVisitorNameChanged
-Listen on event that invoked when the visitor manually changes his name. The visitorName is passed to the function. This is not supported in pop out chat window.
+Callback function invoked when the visitor manually changes his name. The visitorName is passed to the function. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -380,7 +380,7 @@ handleOnVisitorNameChanged(visitorName) {
 <br/>
 
 ## onFileUpload
-Listen on event that invoked when a file is uploaded. The link to the uploaded file is passed to the function. This is not supported in pop out chat window.
+Callback function invoked when a file is uploaded. The link to the uploaded file is passed to the function. This callback is not supported in pop out chat window.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -399,7 +399,7 @@ handleOnFileUpload(link) {
 <br/>
 
 ## onTagsUpdated
-Listen on event that invoked when a tag is updated.
+Callback function invoked when a tag is updated.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -418,7 +418,7 @@ handleOnTagsUpdated(data) {
 <br/>
 
 ## onUnreadCountChanged
-Listen on event that returns count of unread messages.
+Callback function returns count of unread messages.
 
 ``app/components/my-component.hbs``
 ```hbs
@@ -554,7 +554,7 @@ handleOnLoad() {
 <br/>
 
 ## hideWidget
-Hide the chat widget.
+Hides the chat widget.
 
 ```js
 this.tawkMessenger.hideWidget();
@@ -570,7 +570,7 @@ handleOnLoad() {
 <br/>
 
 ## toggleVisibility
-Hides or Shows the chat widget based on the current visibility state.
+Hides or Shows the widget based on the current visibility state.
 
 ```js
 this.tawkMessenger.toggleVisibility();
@@ -760,19 +760,19 @@ handleOnLoad() {
 <br/>
 
 ## setAttributes
-Set custom metadata regarding this chat/visitor.
+Sets custom metadata regarding this chat/visitor.
 
 This function takes in two values: attribute and callback.
 
-The attribute value is of the object data type, which is a key value pair.
+The attribute value is of the object data type, which is a key-value pair.
 
 The key is of the string data type and can contain only alphanumeric characters and ‘-‘ (dash).
 
-You can also use this function to set the visitor name and email. However, you will need to enable the secure mode first and also supply the calculated hash value in this function.
+You can also use this function to set the visitor's name and email. However, you will need to enable the secure mode first and also supply the calculated hash value in this function.
 
 Refer to the secure mode section below on how to do this.
 
-The reason it needs to be in [secure mode](#securemode) is to ensure data integrity — to ensure the value sent from the widget to the dashboard is true and has not been tampered with.
+The reason for enabling [secure mode](#securemode) is to safeguard data integrity — to ensure the value sent from the widget to the dashboard is true and has not been tampered with.
 
 The callback, which is a function, will be invoked to notify whether the save failed.
 
@@ -818,7 +818,7 @@ handleOnLoad() {
 <br/>
 
 ## addEvent
-Set a custom event to chat.
+Sets a custom event to chat.
 This function takes in 3 values: event name, optional metadata and callback.
 
 The event name is of the string data type and can contain only alphanumeric characters and ‘-‘ (dash)
@@ -858,8 +858,8 @@ handleOnLoad() {
 <br/>
 
 ## addTags
-Add tags to the chat.
-This function takes in two values; tags and callback.
+Adds tags to the chat.
+This function takes in two values: tags and callback.
 This is of the array data type.
 The content of the tags should be of the string data type.
 
@@ -890,7 +890,7 @@ handleOnLoad() {
 <br/>
 
 ## removeTags
-Remove tags from the chat.
+Removes tags from the chat.
 This function takes in two values: tags and callback.
 This is of the array data type.
 The content of the tags should be of the string data type.
@@ -921,9 +921,9 @@ handleOnLoad() {
 <br/>
 
 ## secureMode
-Secure method is to ensure the data you are sending is actually from you.
+Secure method ensures the data you are sending is actually from you.
 
-To enable secure mode, embed following code on your page.
+To enable secure mode, embed the following code on your page.
 
 The hash is server side generated HMAC using SHA256, the user’s email and your site’s API key.
 

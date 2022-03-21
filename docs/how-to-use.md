@@ -1,11 +1,11 @@
 # How to Use
-Here are the basic of how to use callbacks and expose functions from the plugin. You can see the
+Here are the basics of how to use callbacks and expose functions from the plugin. You can see the
 list of APIs in this [API reference](api-reference.md).
 
 ## Expose functions
 To access the expose functions, you will need to use the service **tawkMessenger**. In your
-component, controller or anywhere you want to acccess the functions, simply call the service in
-your javascript file.
+component, controller or anywhere you want to access the functions, simply call the service in
+your JavaScript file.
 
 ```js
 import Component from '@glimmer/component';
@@ -23,7 +23,7 @@ export default class MyComponent extends Component {
 ```
 
 ## Using Callbacks
-In your handlebar component, Add **TawkMessenger** as component and pass a function as value of the
+In your handlebar component, Add **TawkMessenger** as a component and pass a function as value of the
 props.
 
 ```hbs

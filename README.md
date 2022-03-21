@@ -7,7 +7,7 @@
 ## Features
 - Documented and self-explaining methods
 - Small size without any external libraries
-- All Javascript API methods are avaiable
+- All Javascript API methods are available
 - Maintained by the [tawk.to](https://www.tawk.to]) team
 
 <br/>
@@ -26,7 +26,7 @@ yarn add @tawk.to/tawk-messenger-ember
 
 ## Quickstart
 Add **tawkMessenger** property in your **config/environment.js** file. The **propertyId** and **widgetId** will
-be found on your tawk Dashboard.
+be found on your tawk.to Dashboard.
 
 Log in to your account and go to **Administration > Channels > Chat Widget**.
 
