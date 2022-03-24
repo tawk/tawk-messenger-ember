@@ -713,7 +713,7 @@ if (this.tawkMessenger.onLoaded()) {
 ```
 
 ## onBeforeLoaded
-Returns a boolean value (true or undefined) indicating when plugin is initialize.
+Returns a boolean value (true or undefined) indicating when plugin is initialized.
 
 ```js
 this.tawkMessenger.onBeforeLoaded();
