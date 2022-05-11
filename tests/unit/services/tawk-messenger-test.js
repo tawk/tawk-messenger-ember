@@ -4,8 +4,8 @@ import { setupTest } from 'ember-qunit';
 module('Unit | Service | tawk-messenger', function (hooks) {
 	setupTest(hooks);
 
-	// TODO: Replace this with your real tests.
-	test('it exists', function (assert) {
+	test('Should throw an error', function (assert) {
+		window.Tawk_API = {};
 		let service = this.owner.lookup('service:tawk-messenger');
 		assert.ok(service);
 	});
