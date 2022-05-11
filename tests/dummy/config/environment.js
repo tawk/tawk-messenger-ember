@@ -2,6 +2,11 @@
 
 module.exports = function (environment) {
 	let ENV = {
+		tawkMessenger : {
+			propertyId : 'property_id',
+			widgetId : 'widget_id'
+		},
+
 		modulePrefix : 'dummy',
 		environment,
 		rootURL : '/',
