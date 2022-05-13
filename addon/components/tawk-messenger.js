@@ -1,4 +1,3 @@
-import { getOwner } from '@ember/application';
 import Component from '@glimmer/component';
 
 // Utilities
@@ -9,27 +8,20 @@ export default class TawkMessengerComponent extends Component {
 	constructor(...args) {
 		super(...args);
 
-		this.env = getOwner(this).resolveRegistration('config:environment');
-
-		if (!this.env.tawkMessenger && typeof this.env.tawkMessenger !== 'object') {
-			console.error('[Tawk-messenger-ember error]: \'tawkMessenger\' object is missing in config/environment');
-			return;
-		}
-
-		if (!isValidString(this.env.tawkMessenger.propertyId)) {
+		if (!isValidString(this.args.propertyId)) {
 			console.error('[Tawk-messenger-ember warn]: You didn\'t specified \'propertyId\'');
 			return;
 		}
 
-		if (!isValidString(this.env.tawkMessenger.widgetId)) {
+		if (!isValidString(this.args.widgetId)) {
 			console.error('[Tawk-messenger-ember warn]: You didn\'t specified \'widgetId\'');
 			return;
 		}
 
-		this.load(this.env.tawkMessenger);
+		this.load();
 	}
 
-	load(options) {
+	load() {
 		if (!window || !document) {
 			return;
 		}
@@ -43,18 +35,18 @@ export default class TawkMessengerComponent extends Component {
 		/**
 		 * Set custom style
 		 */
-		if (options.customStyle && typeof options.customStyle === 'object') {
-			window.Tawk_API.customStyle = options.customStyle;
+		if (this.args.customStyle && typeof this.args.customStyle === 'object') {
+			window.Tawk_API.customStyle = this.args.customStyle;
 		}
 
 		/**
 		 * Inject the Tawk script
 		 */
 		loadScript({
-			propertyId : options.propertyId,
-			widgetId : options.widgetId,
-			embedId : options.embedId,
-			basePath : options.basePath,
+			propertyId : this.args.propertyId,
+			widgetId : this.args.widgetId,
+			embedId : this.args.embedId,
+			basePath : this.args.basePath,
 		});
 
 		/**
