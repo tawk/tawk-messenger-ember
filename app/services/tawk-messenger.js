@@ -1,1 +1,1 @@
-export { default } from 'tawk-messenger-ember/services/tawk-messenger';
+export { default } from '@tawk.to/tawk-messenger-ember/services/tawk-messenger';
