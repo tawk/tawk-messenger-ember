@@ -8,51 +8,55 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
 <br/>
 
 ## Table of contents
-- [onLoad](#onload)
-- [onStatusChange](#onstatuschange)
-- [onBeforeLoad](#onbeforeload)
-- [onChatMaximized](#onchatmaximized)
-- [onChatMinimized](#onchatminimized)
-- [onChatHidden](#onchathidden)
-- [onChatStarted](#onchatstarted)
-- [onChatEnded](#onchatended)
-- [onPrechatSubmit](#onprechatsubmit)
-- [onOfflineSubmit](#onofflinesubmit)
-- [onChatMessageVisitor](#onchatmessagevisitor)
-- [onChatMessageAgent](#onchatmessageagent)
-- [onChatMessageSystem](#onchatmessagesystem)
-- [onAgentJoinChat](#onagentjoinchat)
-- [onAgentLeaveChat](#onagentleavechat)
-- [onChatSatisfaction](#onchatsatisfaction)
-- [onVisitorNameChanged](#onvisitornamechanged)
-- [onFileUpload](#onfileupload)
-- [onTagsUpdated](#ontagsupdated)
-- [onUnreadCountChanged](#onunreadcountchanged)
-- [visitor](#visitor)
-- [maximize](#maximize)
-- [minimize](#minimize)
-- [toggle](#toggle)
-- [popup](#popup)
-- [getWindowType](#getwindowtype)
-- [showWidget](#showwidget)
-- [hideWidget](#hidewidget)
-- [toggleVisibility](#togglevisibility)
-- [getStatus](#getstatus)
-- [isChatMaximized](#ischatmaximized)
-- [isChatMinimized](#ischatminimized)
-- [isChatHidden](#ischathidden)
-- [isChatOngoing](#ischatongoing)
-- [isVisitorEngaged](#isvisitorengaged)
-- [onLoaded](#onloaded)
-- [onBeforeLoaded](#onbeforeloaded)
-- [widgetPosition](#widgetposition)
-- [endChat](#endchat)
-- [setAttributes](#setattributes)
-- [addEvent](#addevent)
-- [addTags](#addtags)
-- [removeTags](#removetags)
-- [secureMode](#securemode)
-- [customStyle](#customstyle)
+- [API Reference](#api-reference)
+  - [Table of contents](#table-of-contents)
+  - [onLoad](#onload)
+  - [onStatusChange](#onstatuschange)
+  - [onBeforeLoad](#onbeforeload)
+  - [onChatMaximized](#onchatmaximized)
+  - [onChatMinimized](#onchatminimized)
+  - [onChatHidden](#onchathidden)
+  - [onChatStarted](#onchatstarted)
+  - [onChatEnded](#onchatended)
+  - [onPrechatSubmit](#onprechatsubmit)
+  - [onOfflineSubmit](#onofflinesubmit)
+  - [onChatMessageVisitor](#onchatmessagevisitor)
+  - [onChatMessageAgent](#onchatmessageagent)
+  - [onChatMessageSystem](#onchatmessagesystem)
+  - [onAgentJoinChat](#onagentjoinchat)
+  - [onAgentLeaveChat](#onagentleavechat)
+  - [onChatSatisfaction](#onchatsatisfaction)
+  - [onVisitorNameChanged](#onvisitornamechanged)
+  - [onFileUpload](#onfileupload)
+  - [onTagsUpdated](#ontagsupdated)
+  - [onUnreadCountChanged](#onunreadcountchanged)
+  - [visitor](#visitor)
+  - [maximize](#maximize)
+  - [minimize](#minimize)
+  - [toggle](#toggle)
+  - [popup](#popup)
+  - [getWindowType](#getwindowtype)
+  - [showWidget](#showwidget)
+  - [hideWidget](#hidewidget)
+  - [toggleVisibility](#togglevisibility)
+  - [getStatus](#getstatus)
+  - [isChatMaximized](#ischatmaximized)
+  - [isChatMinimized](#ischatminimized)
+  - [isChatHidden](#ischathidden)
+  - [isChatOngoing](#ischatongoing)
+  - [isVisitorEngaged](#isvisitorengaged)
+  - [onLoaded](#onloaded)
+  - [onBeforeLoaded](#onbeforeloaded)
+  - [widgetPosition](#widgetposition)
+  - [endChat](#endchat)
+  - [setAttributes](#setattributes)
+  - [addEvent](#addevent)
+  - [addTags](#addtags)
+  - [removeTags](#removetags)
+  - [secureMode](#securemode)
+  - [customstyle](#customstyle)
+    - [zIndex](#zindex)
+    - [Visibility](#visibility)
 
 <br/>
 
@@ -62,7 +66,7 @@ Callback function invoked right after the widget is rendered. This callback is n
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onLoad={{this.handleOnLoad}}>
+    @onLoad={{this.handleOnLoad}}/>
 ```
 
 ``app/components/my-component.js``
@@ -81,7 +85,7 @@ Callback function invoked when the page status changes. The function will receiv
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onStatusChange={{this.handleOnStatusChange}}>
+    @onStatusChange={{this.handleOnStatusChange}}/>
 ```
 
 ``app/components/my-component.js``
@@ -100,7 +104,7 @@ Callback function invoked right when Tawk_API is ready to be used and before the
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onBeforeLoad={{this.handleOnBeforeLoad}}>
+    @onBeforeLoad={{this.handleOnBeforeLoad}}/>
 ```
 
 ``app/components/my-component.js``
@@ -119,7 +123,7 @@ Callback function invoked when the widget is maximized. This callback is not sup
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatMaximized={{this.handleOnChatMaximized}}>
+    @onChatMaximized={{this.handleOnChatMaximized}}/>
 ```
 
 ``app/components/my-component.js``
@@ -138,7 +142,7 @@ Callback function invoked when the widget is minimized. This callback is not sup
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatMaximized={{this.handleOnChatMaximized}}>
+    @onChatMaximized={{this.handleOnChatMaximized}}/>
 ```
 
 ``app/components/my-component.js``
@@ -157,7 +161,7 @@ Callback function invoked when the widget is hidden. This callback is not suppor
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatHidden={{this.handleOnChatHidden}}>
+    @onChatHidden={{this.handleOnChatHidden}}/>
 ```
 
 ``app/components/my-component.js``
@@ -176,7 +180,7 @@ Callback function invoked when the widget is started.
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatStarted={{this.handleOnChatStarted}}>
+    @onChatStarted={{this.handleOnChatStarted}}/>
 ```
 
 ``app/components/my-component.js``
@@ -195,7 +199,7 @@ Callback function invoked when the widget is ended. This callback is not support
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatEnded={{this.handleOnChatEnded}}>
+    @onChatEnded={{this.handleOnChatEnded}}/>
 ```
 
 ``app/components/my-component.js``
@@ -214,7 +218,7 @@ Callback function invoked when the Pre-Chat Form is submitted. The submitted for
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onPrechatSubmit={{this.handleOnPrechatSubmit}}>
+    @onPrechatSubmit={{this.handleOnPrechatSubmit}}/>
 ```
 
 ``app/components/my-component.js``
@@ -233,7 +237,7 @@ Callback function invoked when the Offline form is submitted. The submitted form
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onOfflineSubmit={{this.handleOnOfflineSubmit}}>
+    @onOfflineSubmit={{this.handleOnOfflineSubmit}}/>
 ```
 
 ``app/components/my-component.js``
@@ -252,7 +256,7 @@ Callback function invoked when message is sent by the visitor. The message is pa
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatMessageVisitor={{this.handleOnChatMessageVisitor}}>
+    @onChatMessageVisitor={{this.handleOnChatMessageVisitor}}/>
 ```
 
 ``app/components/my-component.js``
@@ -271,7 +275,7 @@ Callback function invoked when message is sent by the agent. The message is pass
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatMessageAgent={{this.handleOnChatMessageAgent}}>
+    @onChatMessageAgent={{this.handleOnChatMessageAgent}}/>
 ```
 
 ``app/components/my-component.js``
@@ -290,7 +294,7 @@ Callback function invoked when message is sent by the system. The message is pas
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatMessageSystem={{this.handleOnChatMessageSystem}}>
+    @onChatMessageSystem={{this.handleOnChatMessageSystem}}/>
 ```
 
 ``app/components/my-component.js``
@@ -309,7 +313,7 @@ Callback function invoked when an agent joins the chat. The data is passed to th
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onAgentJoinChat={{this.handleOnAgentJoinChat}}>
+    @onAgentJoinChat={{this.handleOnAgentJoinChat}}/>
 ```
 
 ``app/components/my-component.js``
@@ -328,7 +332,7 @@ Callback function invoked when an agent leaves the chat. The data is passed to t
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onAgentLeaveChat={{this.handleOnAgentLeaveChat}}>
+    @onAgentLeaveChat={{this.handleOnAgentLeaveChat}}/>
 ```
 
 ``app/components/my-component.js``
@@ -347,7 +351,7 @@ Callback function invoked when an agent leaves the chat. The satisfaction is pas
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onChatSatisfaction={{this.handleOnChatSatisfaction}}>
+    @onChatSatisfaction={{this.handleOnChatSatisfaction}}/>
 ```
 
 ``app/components/my-component.js``
@@ -366,7 +370,7 @@ Callback function invoked when the visitor manually changes his name. The visito
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onVisitorNameChanged={{this.handleOnVisitorNameChanged}}>
+    @onVisitorNameChanged={{this.handleOnVisitorNameChanged}}/>
 ```
 
 ``app/components/my-component.js``
@@ -385,7 +389,7 @@ Callback function invoked when a file is uploaded. The link to the uploaded file
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onFileUpload={{this.handleOnFileUpload}}>
+    @onFileUpload={{this.handleOnFileUpload}}/>
 ```
 
 ``app/components/my-component.js``
@@ -404,7 +408,7 @@ Callback function invoked when a tag is updated.
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onTagsUpdated={{this.handleOnTagsUpdated}}>
+    @onTagsUpdated={{this.handleOnTagsUpdated}}/>
 ```
 
 ``app/components/my-component.js``
@@ -423,7 +427,7 @@ Callback function returns count of unread messages.
 ``app/components/my-component.hbs``
 ```hbs
 <TawkMessenger
-    @onUnreadCountChanged={{this.handleOnUnreadCountChanged}}>
+    @onUnreadCountChanged={{this.handleOnUnreadCountChanged}}/>
 ```
 
 ``app/components/my-component.js``
