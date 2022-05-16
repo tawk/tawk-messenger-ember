@@ -47,7 +47,8 @@ This project includes a `docs` folder with more details on the following:
 <br/>
 
 ## Other JS frameworks we support
-- [Vue Js](https://github.com/tawk/tawk-messenger-vue)
+- [Vue Js 2](https://github.com/tawk/tawk-messenger-vue-2)
+- [Vue Js 3](https://github.com/tawk/tawk-messenger-vue-3)
 - [React Js](https://github.com/tawk/tawk-messenger-react)
 - [Angular Js](https://github.com/tawk/tawk-messenger-angular)
 
