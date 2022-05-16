@@ -25,22 +25,15 @@ yarn add @tawk.to/tawk-messenger-ember
 <br/>
 
 ## Quickstart
-Add **tawkMessenger** property in your **config/environment.js** file. The **propertyId** and **widgetId** will
+Add **TawkMessenger** component in your handlebar file. The **propertyId** and **widgetId** will
 be found on your tawk.to Dashboard.
 
 Log in to your account and go to **Administration > Channels > Chat Widget**.
 
-```js
-module.exports = function (environment) {
-  let ENV = {
-    ...
-    tawkMessenger : {
-      propertyId : 'property_id',
-      widgetId : 'widget_id'
-    }
-    ...
-  }
-};
+```hbs
+<TawkMessenger
+    @propertyId={{'property_id'}}
+    @widgetId={{'widget_id'}}/>
 ```
 
 <br/>
