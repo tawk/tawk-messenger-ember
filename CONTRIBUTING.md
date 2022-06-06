@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd tawk-messenger-ember`
+* `cd @tawk.to/tawk-messenger-ember`
 * `npm install`
 
 ## Linting

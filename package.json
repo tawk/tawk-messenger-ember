@@ -1,13 +1,28 @@
 {
-  "name": "tawk-messenger-ember",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "name": "@tawk.to/tawk-messenger-ember",
+  "version": "0.0.1",
+  "description": "Official Ember plugin for Tawk messenger",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "emberjs",
+    "ember",
+    "ember-plugin",
+    "tawk",
+    "tawkto",
+    "ember-tawk"
   ],
-  "repository": "",
-  "license": "MIT",
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tawk/tawk-messenger-ember.git",
+    "repository": "tawk/tawk-messenger-ember"
+  },
+  "homepage": "https://github.com/tawk/tawk-messenger-ember#readme",
+  "bugs": {
+    "url": "https://github.com/tawk/tawk-messenger-ember/issues",
+    "email": "support@tawk.to"
+  },
+  "license": "Apache-2.0",
+  "author": "Jerald Austero <jerald.austero@tawk.to> (https://www.tawk.to)",
   "directories": {
     "doc": "doc",
     "test": "tests"
