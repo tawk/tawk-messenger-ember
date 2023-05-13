@@ -110,4 +110,8 @@ export default class TawkMessenger extends Service {
 	removeTags(tags, callback) {
 		window.Tawk_API.removeTags(tags, callback);
 	}
+
+	switchWidget(data, callback) {
+		window.Tawk_API.switchWidget(data, callback);
+	}
 }
