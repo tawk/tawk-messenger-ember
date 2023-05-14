@@ -1,6 +1,6 @@
 {
   "name": "@tawk.to/tawk-messenger-ember",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official Ember plugin for Tawk messenger",
   "keywords": [
     "ember-addon",
