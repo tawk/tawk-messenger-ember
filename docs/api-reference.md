@@ -466,15 +466,7 @@ you will need to manually call the start API. It will not register and connect t
 if this is set to false.
 
 ```js
-module.exports = function (environment) {
-  let ENV = {
-    ...
-    tawkMessenger : {
-      autoStart : false
-    }
-    ...
-  }
-};
+this.tawkMessenger.autoStart(false);
 ```
 
 <br/>
