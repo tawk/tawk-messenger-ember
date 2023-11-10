@@ -465,8 +465,11 @@ If set to true, it will auto-start the Tawk socket connection for chat services.
 you will need to manually call the start API. It will not register and connect to the dashboard
 if this is set to false.
 
-```js
-this.tawkMessenger.autoStart(false);
+```hbs
+<TawkMessenger
+    @propertyId={{'property_id'}}
+    @widgetId={{'widget_id'}}
+    @autoStart={{false}}/>
 ```
 
 <br/>

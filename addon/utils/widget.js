@@ -1,4 +1,4 @@
-function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 'tawk.to'}) {
+function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 'tawk.to', autoStart = true}) {
 	if (embedId.length) {
 		/**
 		 * If the element with embedId as id we will create a new clement
@@ -21,6 +21,10 @@ function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 't
 
 	const firstScript = document.getElementsByTagName('script')[0];
 	firstScript.parentNode.insertBefore(script, firstScript);
+
+	if (autoStart) {
+		window.Tawk_API.autoStart = autoStart;
+	}
 }
 
 export {
