@@ -13,6 +13,14 @@ export default class TawkMessenger extends Service {
 	/**
 	 * API for calling an action on the widget
 	 */
+	start() {
+		return window.Tawk_API.start();
+	}
+
+	shutdown() {
+		return window.Tawk_API.shutdown();
+	}
+
 	maximize() {
 		return window.Tawk_API.maximize();
 	}
