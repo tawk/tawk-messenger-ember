@@ -91,7 +91,7 @@ export default class TawkMessenger extends Service {
 	/**
 	 * API for setting a data on the widget
 	 */
-	tawkvisitor(data) {
+	tawkVisitor(data) {
 		window.Tawk_API.visitor = data;
 	}
 
