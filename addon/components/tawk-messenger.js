@@ -61,122 +61,122 @@ export default class TawkMessengerComponent extends Component {
 	 */
 	mapListeners() {
 		window.addEventListener('tawkLoad', () => {
-			if (this.args.onLoad) {
-				this.args.onLoad();
+			if (this.args.tawkOnLoad) {
+				this.args.tawkOnLoad();
 			}
 		});
 
 		window.addEventListener('tawkStatusChange', (status) => {
-			if (this.args.onStatusChange) {
-				this.args.onStatusChange(status.detail);
+			if (this.args.tawkOnStatusChange) {
+				this.args.tawkOnStatusChange(status.detail);
 			}
 		});
 
 		window.addEventListener('tawkBeforeLoad', () => {
-			if (this.args.onBeforeLoad) {
-				this.args.onBeforeLoad();
+			if (this.args.tawkOnBeforeLoad) {
+				this.args.tawkOnBeforeLoad();
 			}
 		});
 
 		window.addEventListener('tawkChatMaximized', () => {
-			if (this.args.onChatMaximized) {
-				this.args.onChatMaximized();
+			if (this.args.tawkOnChatMaximized) {
+				this.args.tawkOnChatMaximized();
 			}
 		});
 
 		window.addEventListener('tawkChatMinimized', () => {
-			if (this.args.onChatMinimized) {
-				this.args.onChatMinimized();
+			if (this.args.tawkOnChatMinimized) {
+				this.args.tawkOnChatMinimized();
 			}
 		});
 
 		window.addEventListener('tawkChatHidden', () => {
-			if (this.args.onChatHidden) {
-				this.args.onChatHidden();
+			if (this.args.tawkOnChatHidden) {
+				this.args.tawkOnChatHidden();
 			}
 		});
 
 		window.addEventListener('tawkChatStarted', () => {
-			if (this.args.onChatStarted) {
-				this.args.onChatStarted();
+			if (this.args.tawkOnChatStarted) {
+				this.args.tawkOnChatStarted();
 			}
 		});
 
 		window.addEventListener('tawkChatEnded', () => {
-			if (this.args.onChatEnded) {
-				this.args.onChatEnded();
+			if (this.args.tawkOnChatEnded) {
+				this.args.tawkOnChatEnded();
 			}
 		});
 
 		window.addEventListener('tawkPrechatSubmit', (data) => {
-			if (this.args.onPrechatSubmit) {
-				this.args.onPrechatSubmit(data.detail);
+			if (this.args.tawkOnPrechatSubmit) {
+				this.args.tawkOnPrechatSubmit(data.detail);
 			}
 		});
 
 		window.addEventListener('tawkOfflineSubmit', (data) => {
-			if (this.args.onOfflineSubmit) {
-				this.args.onOfflineSubmit(data.detail);
+			if (this.args.tawkOnOfflineSubmit) {
+				this.args.tawkOnOfflineSubmit(data.detail);
 			}
 		});
 
 		window.addEventListener('tawkChatMessageVisitor', (message) => {
-			if (this.args.onChatMessageVisitor) {
-				this.args.onChatMessageVisitor(message.detail);
+			if (this.args.tawkOnChatMessageVisitor) {
+				this.args.tawkOnChatMessageVisitor(message.detail);
 			}
 		});
 
 		window.addEventListener('tawkChatMessageAgent', (message) => {
-			if (this.args.onChatMessageAgent) {
-				this.args.onChatMessageAgent(message.detail);
+			if (this.args.tawkOnChatMessageAgent) {
+				this.args.tawkOnChatMessageAgent(message.detail);
 			}
 		});
 
 		window.addEventListener('tawkChatMessageSystem', (message) => {
-			if (this.args.onChatMessageSystem) {
-				this.args.onChatMessageSystem(message.detail);
+			if (this.args.tawkOnChatMessageSystem) {
+				this.args.tawkOnChatMessageSystem(message.detail);
 			}
 		});
 
 		window.addEventListener('tawkAgentJoinChat', (data) => {
-			if (this.args.onAgentJoinChat) {
-				this.args.onAgentJoinChat(data.detail);
+			if (this.args.tawkOnAgentJoinChat) {
+				this.args.tawkOnAgentJoinChat(data.detail);
 			}
 		});
 
 		window.addEventListener('tawkAgentLeaveChat', (data) => {
-			if (this.args.onAgentLeaveChat) {
-				this.args.onAgentLeaveChat(data.detail);
+			if (this.args.tawkOnAgentLeaveChat) {
+				this.args.tawkOnAgentLeaveChat(data.detail);
 			}
 		});
 
 		window.addEventListener('tawkChatSatisfaction', (satisfaction) => {
-			if (this.args.onChatSatisfaction) {
-				this.args.onChatSatisfaction(satisfaction.detail);
+			if (this.args.tawkOnChatSatisfaction) {
+				this.args.tawkOnChatSatisfaction(satisfaction.detail);
 			}
 		});
 
 		window.addEventListener('tawkVisitorNameChanged', (visitorName) => {
-			if (this.args.onVisitorNameChanged) {
-				this.args.onVisitorNameChanged(visitorName.detail);
+			if (this.args.tawkOnVisitorNameChanged) {
+				this.args.tawkOnVisitorNameChanged(visitorName.detail);
 			}
 		});
 
 		window.addEventListener('tawkFileUpload', (link) => {
-			if (this.args.onFileUpload) {
-				this.args.onFileUpload(link.detail);
+			if (this.args.tawkOnFileUpload) {
+				this.args.tawkOnFileUpload(link.detail);
 			}
 		});
 
 		window.addEventListener('tawkTagsUpdated', (data) => {
-			if (this.args.onTagsUpdated) {
-				this.args.onTagsUpdated(data.detail);
+			if (this.args.tawkOnTagsUpdated) {
+				this.args.tawkOnTagsUpdated(data.detail);
 			}
 		});
 
 		window.addEventListener('tawkUnreadCountChanged', (data) => {
-			if (this.args.onUnreadCountChanged) {
-				this.args.onUnreadCountChanged(data.detail);
+			if (this.args.tawkOnUnreadCountChanged) {
+				this.args.tawkOnUnreadCountChanged(data.detail);
 			}
 		});
 	}
