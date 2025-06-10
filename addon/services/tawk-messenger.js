@@ -13,6 +13,14 @@ export default class TawkMessenger extends Service {
 	/**
 	 * API for calling an action on the widget
 	 */
+	tawkStart() {
+		return window.Tawk_API.start();
+	}
+
+	tawkShutdown() {
+		return window.Tawk_API.shutdown();
+	}
+
 	tawkMaximize() {
 		return window.Tawk_API.maximize();
 	}
@@ -109,5 +117,9 @@ export default class TawkMessenger extends Service {
 
 	tawkRemoveTags(tags, callback) {
 		window.Tawk_API.removeTags(tags, callback);
+	}
+
+	switchWidget(data, callback) {
+		window.Tawk_API.switchWidget(data, callback);
 	}
 }

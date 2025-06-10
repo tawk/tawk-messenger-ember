@@ -31,6 +31,9 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
   - [tawkOnTagsUpdated](#tawkontagsupdated)
   - [tawkOnUnreadCountChanged](#tawkonunreadcountchanged)
   - [tawkVisitor](#tawkvisitor)
+  - [autoStart](#autostart)
+  - [tawkStart](#tawkstart)
+  - [tawkShutdown](#tawkshutdown)
   - [tawkMaximize](#tawkmaximize)
   - [tawkMinimize](#tawkminimize)
   - [tawkToggle](#tawktoggle)
@@ -57,6 +60,7 @@ Use the JavaScript API to manipulate the chat widget displayed on your website.
   - [customstyle](#customstyle)
     - [zIndex](#zindex)
     - [Visibility](#visibility)
+  - [switchWidget](#switchwidget)
 
 <br/>
 
@@ -453,6 +457,52 @@ this.tawkMessenger.tawkVisitor({
     email : 'email@email.com'
 });
 
+```
+
+<br/>
+
+## autoStart
+If set to true, it will auto-start the Tawk socket connection for chat services. If set to false,
+you will need to manually call the start API. It will not register and connect to the dashboard
+if this is set to false.
+
+```hbs
+<TawkMessenger
+    @propertyId={{'property_id'}}
+    @widgetId={{'widget_id'}}
+    @autoStart={{false}}/>
+```
+
+<br/>
+
+## tawkStart
+Start the tawk socket connection.
+
+```js
+this.tawkMessenger.tawkStart();
+
+// Example
+
+@action
+handleOnLoad() {
+  this.tawkMessenger.tawkStart();
+}
+```
+
+<br/>
+
+## tawkShutdown
+End the tawk socket connection.
+
+```js
+this.tawkMessenger.tawkShutdown();
+
+// Example
+
+@action
+handleOnLoad() {
+  this.tawkMessenger.tawkShutdown();
+}
 ```
 
 <br/>
@@ -1052,4 +1102,26 @@ module.exports = function (environment) {
     ...
   }
 };
+```
+
+<br/>
+
+## switchWidget
+Disconnect the current widget connection, logout if it has existing user login and switch to
+another widget.
+
+```js
+this.tawkMessenger.switchWidget(data, callback);
+
+// Example
+
+@action
+handleOnLoad() {
+    this.tawkMessenger.switchWidget({
+        propertyId : 'your-property-id',
+        widgetId : 'your-widget-id'
+    }, function () {
+        // do something
+    });
+}
 ```

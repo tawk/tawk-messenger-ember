@@ -47,6 +47,7 @@ export default class TawkMessengerComponent extends Component {
 			widgetId : this.args.widgetId,
 			embedId : this.args.embedId,
 			basePath : this.args.basePath,
+			autoStart : this.args.autoStart
 		});
 
 		/**
