@@ -13,109 +13,109 @@ export default class TawkMessenger extends Service {
 	/**
 	 * API for calling an action on the widget
 	 */
-	start() {
+	tawkStart() {
 		return window.Tawk_API.start();
 	}
 
-	shutdown() {
+	tawkShutdown() {
 		return window.Tawk_API.shutdown();
 	}
 
-	maximize() {
+	tawkMaximize() {
 		return window.Tawk_API.maximize();
 	}
 
-	minimize() {
+	tawkMinimize() {
 		return window.Tawk_API.minimize();
 	}
 
-	toggle() {
+	tawkToggle() {
 		return window.Tawk_API.toggle();
 	}
 
-	popup() {
+	tawkPopup() {
 		return window.Tawk_API.popup();
 	}
 
-	showWidget() {
+	tawkShowWidget() {
 		return window.Tawk_API.showWidget();
 	}
 
-	hideWidget() {
+	tawkHideWidget() {
 		return window.Tawk_API.hideWidget();
 	}
 
-	toggleVisibility() {
+	tawkToggleVisibility() {
 		return window.Tawk_API.toggleVisibility();
 	}
 
-	endChat() {
+	tawkEndChat() {
 		return window.Tawk_API.endChat();
 	}
 
 	/**
 	 * API for returning a data
 	 */
-	getWindowType() {
+	tawkGetWindowType() {
 		return window.Tawk_API.getWindowType();
 	}
 
-	getStatus() {
+	tawkGetStatus() {
 		return window.Tawk_API.getStatus();
 	}
 
-	isChatMaximized() {
+	tawkIsChatMaximized() {
 		return window.Tawk_API.isChatMaximized();
 	}
 
-	isChatMinimized() {
+	tawkIsChatMinimized() {
 		return window.Tawk_API.isChatMinimized();
 	}
 
-	isChatHidden() {
+	tawkIsChatHidden() {
 		return window.Tawk_API.isChatHidden();
 	}
 
-	isChatOngoing() {
+	tawkIsChatOngoing() {
 		return window.Tawk_API.isChatOngoing();
 	}
 
-	isVisitorEngaged() {
+	tawkIsVisitorEngaged() {
 		return window.Tawk_API.isVisitorEngaged();
 	}
 
-	onLoaded() {
+	tawkOnLoaded() {
 		return window.Tawk_API.onLoaded;
 	}
 
-	onBeforeLoaded() {
+	tawkOnBeforeLoaded() {
 		return window.Tawk_API.onBeforeLoaded;
 	}
 
-	widgetPosition() {
+	tawkWidgetPosition() {
 		return window.Tawk_API.widgetPosition();
 	}
 
 	/**
 	 * API for setting a data on the widget
 	 */
-	visitor(data) {
+	tawkVisitor(data) {
 		window.Tawk_API.visitor = data;
 	}
 
-	setAttributes(attribute, callback) {
+	tawkSetAttributes(attribute, callback) {
 		window.Tawk_API.setAttributes(attribute, callback);
 	}
 
-	addEvent(event, metadata, callback) {
+	tawkAddEvent(event, metadata, callback) {
 		window.Tawk_API.addEvent(event, metadata, callback);
 	}
 
-	addTags(tags, callback) {
+	tawkAddTags(tags, callback) {
 		window.Tawk_API.addTags(tags, callback);
 	}
 
-	removeTags(tags, callback) {
+	tawkRemoveTags(tags, callback) {
 		window.Tawk_API.removeTags(tags, callback);
 	}
 
