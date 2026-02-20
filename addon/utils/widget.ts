@@ -1,4 +1,12 @@
-function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 'tawk.to', autoStart = true}) {
+export interface LoadScriptOptions {
+	propertyId?: string;
+	widgetId?: string;
+	embedId?: string;
+	basePath?: string;
+	autoStart?: boolean;
+}
+
+function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 'tawk.to', autoStart = true}: LoadScriptOptions): void {
 	if (embedId.length) {
 		/**
 		 * If the element with embedId as id we will create a new clement
@@ -24,7 +32,7 @@ function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 't
 	script.setAttribute('crossorigin', '*');
 
 	const firstScript = document.getElementsByTagName('script')[0];
-	firstScript.parentNode.insertBefore(script, firstScript);
+	firstScript.parentNode!.insertBefore(script, firstScript);
 }
 
 export {

@@ -4,9 +4,44 @@ import Component from '@glimmer/component';
 import { isValidString } from '../utils/helper';
 import { loadScript } from '../utils/widget';
 
-export default class TawkMessengerComponent extends Component {
-	constructor(...args) {
-		super(...args);
+import type { TawkCustomStyle } from '../../types/tawk-api';
+
+export interface TawkMessengerSignature {
+	Args: {
+		propertyId: string;
+		widgetId: string;
+		embedId?: string;
+		basePath?: string;
+		autoStart?: boolean;
+		customStyle?: TawkCustomStyle;
+		tawkOnLoad?: () => void;
+		tawkOnStatusChange?: (status: unknown) => void;
+		tawkOnBeforeLoad?: () => void;
+		tawkOnChatMaximized?: () => void;
+		tawkOnChatMinimized?: () => void;
+		tawkOnChatHidden?: () => void;
+		tawkOnChatStarted?: () => void;
+		tawkOnChatEnded?: () => void;
+		tawkOnPrechatSubmit?: (data: unknown) => void;
+		tawkOnOfflineSubmit?: (data: unknown) => void;
+		tawkOnChatMessageVisitor?: (message: string) => void;
+		tawkOnChatMessageAgent?: (message: string) => void;
+		tawkOnChatMessageSystem?: (message: string) => void;
+		tawkOnAgentJoinChat?: (data: unknown) => void;
+		tawkOnAgentLeaveChat?: (data: unknown) => void;
+		tawkOnChatSatisfaction?: (satisfaction: string) => void;
+		tawkOnVisitorNameChanged?: (visitorName: string) => void;
+		tawkOnFileUpload?: (link: string) => void;
+		tawkOnTagsUpdated?: (data: unknown) => void;
+		tawkOnUnreadCountChanged?: (data: unknown) => void;
+	};
+	Blocks: Record<string, never>;
+	Element: null;
+}
+
+export default class TawkMessengerComponent extends Component<TawkMessengerSignature> {
+	constructor(owner: unknown, args: TawkMessengerSignature['Args']) {
+		super(owner, args);
 
 		if (!isValidString(this.args.propertyId)) {
 			console.error('[Tawk-messenger-ember warn]: You didn\'t specified \'propertyId\'');
@@ -21,7 +56,7 @@ export default class TawkMessengerComponent extends Component {
 		this.load();
 	}
 
-	load() {
+	load(): void {
 		if (!window || !document) {
 			return;
 		}
@@ -29,7 +64,7 @@ export default class TawkMessengerComponent extends Component {
 		/**
 		 * Set placeholder
 		 */
-		window.Tawk_API = window.Tawk_API || {};
+		window.Tawk_API = window.Tawk_API || ({} as typeof window.Tawk_API);
 		window.Tawk_LoadStart = new Date();
 
 		/**
@@ -60,18 +95,18 @@ export default class TawkMessengerComponent extends Component {
 	 * API for listening an event emitting
 	 * inside of the widget
 	 */
-	mapListeners() {
+	mapListeners(): void {
 		window.addEventListener('tawkLoad', () => {
 			if (this.args.tawkOnLoad) {
 				this.args.tawkOnLoad();
 			}
 		});
 
-		window.addEventListener('tawkStatusChange', (status) => {
+		window.addEventListener('tawkStatusChange', ((status: CustomEvent) => {
 			if (this.args.tawkOnStatusChange) {
 				this.args.tawkOnStatusChange(status.detail);
 			}
-		});
+		}) as EventListener);
 
 		window.addEventListener('tawkBeforeLoad', () => {
 			if (this.args.tawkOnBeforeLoad) {
@@ -109,76 +144,76 @@ export default class TawkMessengerComponent extends Component {
 			}
 		});
 
-		window.addEventListener('tawkPrechatSubmit', (data) => {
+		window.addEventListener('tawkPrechatSubmit', ((data: CustomEvent) => {
 			if (this.args.tawkOnPrechatSubmit) {
 				this.args.tawkOnPrechatSubmit(data.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkOfflineSubmit', (data) => {
+		window.addEventListener('tawkOfflineSubmit', ((data: CustomEvent) => {
 			if (this.args.tawkOnOfflineSubmit) {
 				this.args.tawkOnOfflineSubmit(data.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkChatMessageVisitor', (message) => {
+		window.addEventListener('tawkChatMessageVisitor', ((message: CustomEvent) => {
 			if (this.args.tawkOnChatMessageVisitor) {
 				this.args.tawkOnChatMessageVisitor(message.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkChatMessageAgent', (message) => {
+		window.addEventListener('tawkChatMessageAgent', ((message: CustomEvent) => {
 			if (this.args.tawkOnChatMessageAgent) {
 				this.args.tawkOnChatMessageAgent(message.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkChatMessageSystem', (message) => {
+		window.addEventListener('tawkChatMessageSystem', ((message: CustomEvent) => {
 			if (this.args.tawkOnChatMessageSystem) {
 				this.args.tawkOnChatMessageSystem(message.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkAgentJoinChat', (data) => {
+		window.addEventListener('tawkAgentJoinChat', ((data: CustomEvent) => {
 			if (this.args.tawkOnAgentJoinChat) {
 				this.args.tawkOnAgentJoinChat(data.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkAgentLeaveChat', (data) => {
+		window.addEventListener('tawkAgentLeaveChat', ((data: CustomEvent) => {
 			if (this.args.tawkOnAgentLeaveChat) {
 				this.args.tawkOnAgentLeaveChat(data.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkChatSatisfaction', (satisfaction) => {
+		window.addEventListener('tawkChatSatisfaction', ((satisfaction: CustomEvent) => {
 			if (this.args.tawkOnChatSatisfaction) {
 				this.args.tawkOnChatSatisfaction(satisfaction.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkVisitorNameChanged', (visitorName) => {
+		window.addEventListener('tawkVisitorNameChanged', ((visitorName: CustomEvent) => {
 			if (this.args.tawkOnVisitorNameChanged) {
 				this.args.tawkOnVisitorNameChanged(visitorName.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkFileUpload', (link) => {
+		window.addEventListener('tawkFileUpload', ((link: CustomEvent) => {
 			if (this.args.tawkOnFileUpload) {
 				this.args.tawkOnFileUpload(link.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkTagsUpdated', (data) => {
+		window.addEventListener('tawkTagsUpdated', ((data: CustomEvent) => {
 			if (this.args.tawkOnTagsUpdated) {
 				this.args.tawkOnTagsUpdated(data.detail);
 			}
-		});
+		}) as EventListener);
 
-		window.addEventListener('tawkUnreadCountChanged', (data) => {
+		window.addEventListener('tawkUnreadCountChanged', ((data: CustomEvent) => {
 			if (this.args.tawkOnUnreadCountChanged) {
 				this.args.tawkOnUnreadCountChanged(data.detail);
 			}
-		});
+		}) as EventListener);
 	}
 }
