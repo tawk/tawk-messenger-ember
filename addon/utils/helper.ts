@@ -12,6 +12,4 @@ function isValidString(value: unknown): value is string {
 	return value !== null && value !== undefined && typeof value === 'string';
 }
 
-export {
-	isValidString
-};
+export { isValidString };

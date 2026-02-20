@@ -44,12 +44,16 @@ export default class TawkMessengerComponent extends Component<TawkMessengerSigna
 		super(owner, args);
 
 		if (!isValidString(this.args.propertyId)) {
-			console.error('[Tawk-messenger-ember warn]: You didn\'t specified \'propertyId\'');
+			console.error(
+				'[Tawk-messenger-ember warn]: You didn\'t specified \'propertyId\'',
+			);
 			return;
 		}
 
 		if (!isValidString(this.args.widgetId)) {
-			console.error('[Tawk-messenger-ember warn]: You didn\'t specified \'widgetId\'');
+			console.error(
+				'[Tawk-messenger-ember warn]: You didn\'t specified \'widgetId\'',
+			);
 			return;
 		}
 
@@ -70,7 +74,10 @@ export default class TawkMessengerComponent extends Component<TawkMessengerSigna
 		/**
 		 * Set custom style
 		 */
-		if (this.args.customStyle && typeof this.args.customStyle === 'object') {
+		if (
+			this.args.customStyle &&
+			typeof this.args.customStyle === 'object'
+		) {
 			window.Tawk_API.customStyle = this.args.customStyle;
 		}
 
@@ -82,12 +89,12 @@ export default class TawkMessengerComponent extends Component<TawkMessengerSigna
 			widgetId : this.args.widgetId,
 			embedId : this.args.embedId,
 			basePath : this.args.basePath,
-			autoStart : this.args.autoStart
+			autoStart : this.args.autoStart,
 		});
 
 		/**
 		 * Inject the event listeners
-		*/
+		 */
 		this.mapListeners();
 	}
 
@@ -156,19 +163,25 @@ export default class TawkMessengerComponent extends Component<TawkMessengerSigna
 			}
 		}) as EventListener);
 
-		window.addEventListener('tawkChatMessageVisitor', ((message: CustomEvent) => {
+		window.addEventListener('tawkChatMessageVisitor', ((
+			message: CustomEvent,
+		) => {
 			if (this.args.tawkOnChatMessageVisitor) {
 				this.args.tawkOnChatMessageVisitor(message.detail);
 			}
 		}) as EventListener);
 
-		window.addEventListener('tawkChatMessageAgent', ((message: CustomEvent) => {
+		window.addEventListener('tawkChatMessageAgent', ((
+			message: CustomEvent,
+		) => {
 			if (this.args.tawkOnChatMessageAgent) {
 				this.args.tawkOnChatMessageAgent(message.detail);
 			}
 		}) as EventListener);
 
-		window.addEventListener('tawkChatMessageSystem', ((message: CustomEvent) => {
+		window.addEventListener('tawkChatMessageSystem', ((
+			message: CustomEvent,
+		) => {
 			if (this.args.tawkOnChatMessageSystem) {
 				this.args.tawkOnChatMessageSystem(message.detail);
 			}
@@ -186,13 +199,17 @@ export default class TawkMessengerComponent extends Component<TawkMessengerSigna
 			}
 		}) as EventListener);
 
-		window.addEventListener('tawkChatSatisfaction', ((satisfaction: CustomEvent) => {
+		window.addEventListener('tawkChatSatisfaction', ((
+			satisfaction: CustomEvent,
+		) => {
 			if (this.args.tawkOnChatSatisfaction) {
 				this.args.tawkOnChatSatisfaction(satisfaction.detail);
 			}
 		}) as EventListener);
 
-		window.addEventListener('tawkVisitorNameChanged', ((visitorName: CustomEvent) => {
+		window.addEventListener('tawkVisitorNameChanged', ((
+			visitorName: CustomEvent,
+		) => {
 			if (this.args.tawkOnVisitorNameChanged) {
 				this.args.tawkOnVisitorNameChanged(visitorName.detail);
 			}
@@ -210,7 +227,9 @@ export default class TawkMessengerComponent extends Component<TawkMessengerSigna
 			}
 		}) as EventListener);
 
-		window.addEventListener('tawkUnreadCountChanged', ((data: CustomEvent) => {
+		window.addEventListener('tawkUnreadCountChanged', ((
+			data: CustomEvent,
+		) => {
 			if (this.args.tawkOnUnreadCountChanged) {
 				this.args.tawkOnUnreadCountChanged(data.detail);
 			}

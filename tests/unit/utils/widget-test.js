@@ -1,5 +1,3 @@
 import { module } from 'qunit';
 
-module('Unit | Utility | widget', function () {
-
-});
+module('Unit | Utility | widget', function () {});

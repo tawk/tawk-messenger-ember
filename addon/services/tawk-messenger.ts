@@ -102,11 +102,18 @@ export default class TawkMessengerService extends Service {
 		window.Tawk_API.visitor = data;
 	}
 
-	tawkSetAttributes(attribute: Record<string, string>, callback?: TawkCallback): void {
+	tawkSetAttributes(
+		attribute: Record<string, string>,
+		callback?: TawkCallback,
+	): void {
 		window.Tawk_API.setAttributes(attribute, callback);
 	}
 
-	tawkAddEvent(event: string, metadata?: Record<string, string>, callback?: TawkCallback): void {
+	tawkAddEvent(
+		event: string,
+		metadata?: Record<string, string>,
+		callback?: TawkCallback,
+	): void {
 		window.Tawk_API.addEvent(event, metadata, callback);
 	}
 

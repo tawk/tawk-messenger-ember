@@ -6,7 +6,13 @@ export interface LoadScriptOptions {
 	autoStart?: boolean;
 }
 
-function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 'tawk.to', autoStart = true}: LoadScriptOptions): void {
+function loadScript({
+	propertyId = '',
+	widgetId = '',
+	embedId = '',
+	basePath = 'tawk.to',
+	autoStart = true,
+}: LoadScriptOptions): void {
 	if (embedId.length) {
 		/**
 		 * If the element with embedId as id we will create a new clement
@@ -35,6 +41,4 @@ function loadScript({propertyId = '', widgetId = '', embedId = '', basePath = 't
 	firstScript.parentNode!.insertBefore(script, firstScript);
 }
 
-export {
-	loadScript
-};
+export { loadScript };

@@ -75,8 +75,15 @@ export interface TawkAPI {
 	widgetPosition(): string;
 
 	// Setter methods
-	setAttributes(attributes: Record<string, string>, callback?: TawkCallback): void;
-	addEvent(event: string, metadata?: Record<string, string>, callback?: TawkCallback): void;
+	setAttributes(
+		attributes: Record<string, string>,
+		callback?: TawkCallback,
+	): void;
+	addEvent(
+		event: string,
+		metadata?: Record<string, string>,
+		callback?: TawkCallback,
+	): void;
 	addTags(tags: string[], callback?: TawkCallback): void;
 	removeTags(tags: string[], callback?: TawkCallback): void;
 	switchWidget(data: TawkSwitchWidgetData, callback?: TawkCallback): void;
