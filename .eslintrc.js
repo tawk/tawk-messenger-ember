@@ -2,27 +2,23 @@
 
 module.exports = {
 	root : true,
-	parser : 'babel-eslint',
+	parser : '@typescript-eslint/parser',
 	parserOptions : {
-		ecmaVersion : 2018,
+		ecmaVersion : 'latest',
 		sourceType : 'module',
-		ecmaFeatures : {
-			legacyDecorators : true,
-		},
 	},
-	plugins : ['ember'],
+	plugins : ['ember', '@typescript-eslint'],
 	extends : [
 		'eslint:recommended',
-		'plugin:ember/recommended'
+		'plugin:ember/recommended',
+		'plugin:@typescript-eslint/recommended',
 	],
-	ignorePatterns : ['/dist/**'],
 	env : {
 		browser : true,
 	},
 	rules : {
 		'no-console' : ['error', { allow : ['warn', 'error'] }],
 		'no-debugger' : 'error',
-		'no-var' : 'off',
 		semi : ['error', 'always'],
 		indent : [1, 'tab'],
 		'space-before-function-paren' : [
@@ -42,6 +38,7 @@ module.exports = {
 		'no-nested-ternary' : 'error',
 		quotes : ['error', 'single'],
 		'arrow-parens' : ['error', 'always'],
+		'@typescript-eslint/no-explicit-any' : 'warn',
 	},
 	overrides : [
 		// node files
@@ -57,15 +54,21 @@ module.exports = {
 				'./config/**/*.js',
 				'./tests/dummy/config/**/*.js',
 			],
+			parser : 'espree',
 			parserOptions : {
 				sourceType : 'script',
+				ecmaVersion : 'latest',
 			},
 			env : {
 				browser : false,
 				node : true,
 			},
-			plugins : ['node'],
-			extends : ['plugin:node/recommended'],
+			plugins : ['n'],
+			extends : ['plugin:n/recommended'],
+			rules : {
+				'@typescript-eslint/no-var-requires' : 'off',
+				'@typescript-eslint/no-require-imports' : 'off',
+			},
 		},
 		{
 			// test files

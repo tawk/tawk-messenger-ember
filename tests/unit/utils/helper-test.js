@@ -1,5 +1,3 @@
 import { module } from 'qunit';
 
-module('Unit | Utility | helper', function () {
-
-});
+module('Unit | Utility | helper', function () {});

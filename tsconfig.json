@@ -1,0 +1,23 @@
+{
+  "extends": "@tsconfig/ember/tsconfig.json",
+  "compilerOptions": {
+    "strict": false,
+    "noUncheckedIndexedAccess": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "verbatimModuleSyntax": false,
+    "declaration": true,
+    "declarationDir": "declarations",
+    "baseUrl": ".",
+    "types": ["ember-source/types"],
+    "paths": {
+      "@tawk.to/tawk-messenger-ember/*": ["addon/*"],
+      "dummy/*": ["tests/dummy/app/*"],
+      "dummy/config/*": ["tests/dummy/config/*"]
+    }
+  },
+  "include": [
+    "addon/**/*",
+    "types/**/*",
+    "tests/**/*"
+  ]
+}

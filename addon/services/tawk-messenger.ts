@@ -1,125 +1,131 @@
 import Service from '@ember/service';
 
-export default class TawkMessenger extends Service {
-	constructor(...args) {
-		super(...args);
+import type {
+	TawkStatus,
+	TawkWindowType,
+	TawkVisitor,
+	TawkCallback,
+	TawkSwitchWidgetData,
+} from '../../types/tawk-api';
 
-		if (!window.Tawk_API || typeof window.Tawk_API !== 'object') {
-			console.error('[Tawk-messenger-ember warn]: Please load the component first before calling the services.');
-			return;
-		}
-	}
-
+export default class TawkMessengerService extends Service {
 	/**
 	 * API for calling an action on the widget
 	 */
-	tawkStart() {
+	tawkStart(): void {
 		return window.Tawk_API.start();
 	}
 
-	tawkShutdown() {
+	tawkShutdown(): void {
 		return window.Tawk_API.shutdown();
 	}
 
-	tawkMaximize() {
+	tawkMaximize(): void {
 		return window.Tawk_API.maximize();
 	}
 
-	tawkMinimize() {
+	tawkMinimize(): void {
 		return window.Tawk_API.minimize();
 	}
 
-	tawkToggle() {
+	tawkToggle(): void {
 		return window.Tawk_API.toggle();
 	}
 
-	tawkPopup() {
+	tawkPopup(): void {
 		return window.Tawk_API.popup();
 	}
 
-	tawkShowWidget() {
+	tawkShowWidget(): void {
 		return window.Tawk_API.showWidget();
 	}
 
-	tawkHideWidget() {
+	tawkHideWidget(): void {
 		return window.Tawk_API.hideWidget();
 	}
 
-	tawkToggleVisibility() {
+	tawkToggleVisibility(): void {
 		return window.Tawk_API.toggleVisibility();
 	}
 
-	tawkEndChat() {
+	tawkEndChat(): void {
 		return window.Tawk_API.endChat();
 	}
 
 	/**
 	 * API for returning a data
 	 */
-	tawkGetWindowType() {
+	tawkGetWindowType(): TawkWindowType {
 		return window.Tawk_API.getWindowType();
 	}
 
-	tawkGetStatus() {
+	tawkGetStatus(): TawkStatus {
 		return window.Tawk_API.getStatus();
 	}
 
-	tawkIsChatMaximized() {
+	tawkIsChatMaximized(): boolean {
 		return window.Tawk_API.isChatMaximized();
 	}
 
-	tawkIsChatMinimized() {
+	tawkIsChatMinimized(): boolean {
 		return window.Tawk_API.isChatMinimized();
 	}
 
-	tawkIsChatHidden() {
+	tawkIsChatHidden(): boolean {
 		return window.Tawk_API.isChatHidden();
 	}
 
-	tawkIsChatOngoing() {
+	tawkIsChatOngoing(): boolean {
 		return window.Tawk_API.isChatOngoing();
 	}
 
-	tawkIsVisitorEngaged() {
+	tawkIsVisitorEngaged(): boolean {
 		return window.Tawk_API.isVisitorEngaged();
 	}
 
-	tawkOnLoaded() {
+	tawkOnLoaded(): boolean | undefined {
 		return window.Tawk_API.onLoaded;
 	}
 
-	tawkOnBeforeLoaded() {
+	tawkOnBeforeLoaded(): boolean | undefined {
 		return window.Tawk_API.onBeforeLoaded;
 	}
 
-	tawkWidgetPosition() {
+	tawkWidgetPosition(): string {
 		return window.Tawk_API.widgetPosition();
 	}
 
 	/**
 	 * API for setting a data on the widget
 	 */
-	tawkVisitor(data) {
+	tawkVisitor(data: TawkVisitor): void {
 		window.Tawk_API.visitor = data;
 	}
 
-	tawkSetAttributes(attribute, callback) {
+	tawkSetAttributes(
+		attribute: Record<string, string>,
+		callback?: TawkCallback,
+	): void {
 		window.Tawk_API.setAttributes(attribute, callback);
 	}
 
-	tawkAddEvent(event, metadata, callback) {
+	tawkAddEvent(
+		event: string,
+		metadata?: Record<string, string>,
+		callback?: TawkCallback,
+	): void {
 		window.Tawk_API.addEvent(event, metadata, callback);
 	}
 
-	tawkAddTags(tags, callback) {
+	tawkAddTags(tags: string[], callback?: TawkCallback): void {
 		window.Tawk_API.addTags(tags, callback);
 	}
 
-	tawkRemoveTags(tags, callback) {
+	tawkRemoveTags(tags: string[], callback?: TawkCallback): void {
 		window.Tawk_API.removeTags(tags, callback);
 	}
 
-	switchWidget(data, callback) {
+	switchWidget(data: TawkSwitchWidgetData, callback?: TawkCallback): void {
 		window.Tawk_API.switchWidget(data, callback);
 	}
 }
